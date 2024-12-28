@@ -90,12 +90,11 @@ c = a // Se copia el valor
 c = 20
 ```
 
-
-|variables|Memoria RAM | Dirección memoria (referencia)|
-|---|---|---|
-|a|10|0x333|
-|b|15|0x344|
-|c| ~~10~~ 20 |0x355|
+| variables | Memoria RAM | Dirección memoria (referencia) |
+| --------- | ----------- | ------------------------------ |
+| a         | 10          | 0x333                          |
+| b         | 15          | 0x344                          |
+| c         | ~~10~~ 20   | 0x355                          |
 
 > [!NOTE]
 > Sistemas de Numeración como Binario, Octal, Decimal o Hexadecimal
@@ -119,13 +118,13 @@ miVariable = 10; // int -> 4 bytes
 
 **Tipos de datos en C**
 
-| Tipos | Signifcado|EJemplos|
-|--|--|--|
-|int|Entero|10, -8, etc (4 bytes)|
-|float|Real|3.5, -6.9, etc (4 bytes)|
-|double|Real con más precisión que float|3e39 (8 bytes)|
-|char|Caracter|`'A'` (1 byte)|
-|bool|Lógico| `true` (1) o `false` (0) (1 byte)|
+| Tipos  | Signifcado                       | EJemplos                          |
+| ------ | -------------------------------- | --------------------------------- |
+| int    | Entero                           | 10, -8, etc (4 bytes)             |
+| float  | Real                             | 3.5, -6.9, etc (4 bytes)          |
+| double | Real con más precisión que float | 3e39 (8 bytes)                    |
+| char   | Caracter                         | `'A'` (1 byte)                    |
+| bool   | Lógico                           | `true` (1) o `false` (0) (1 byte) |
 
 ---
 
@@ -301,7 +300,6 @@ int main()
 
 ![alt text](image-1.png)
 
-
 ```c
 #include <stdio.h>
 #include <stdbool.h>
@@ -350,7 +348,6 @@ int main()
 ---
 
 **Introducir Cadenas por Consola**
-
 
 ```c
 // stdio => std - io
@@ -532,10 +529,322 @@ int main()
 
 ---
 
-## Operadores 
+## Operadores
+
+Los operadores nos permiten realizar operaciones al usar valores y variables
+
+**Tipos de Operadores**
+
+- Aritméticos
+- Asignación
+- Comparación
+- Lógicos
+
+**Operadores Aritméticos**
+
+| Operadores | Significado               | Ejemplos  |
+| ---------- | ------------------------- | --------- |
+| +          | Suma                      | x + y     |
+| -          | Resta                     | x - y     |
+| *          | Multiplicación            | x * y     |
+| /          | División                  | x / y     |
+| %          | Modulo (Residua División) | x % y     |
+| ++         | Incremento                | ++x o x++ |
+| --         | Decremento                | --x o x-- |
+
+---
+
+**Operadores Aritméticos**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Operadores Aritmeticos
+  int a, b, c, e, f;
+  float d;
+
+  // Suma +
+  a = 3 + 4;
+  printf("Suma: %d\n", a);
+
+  // Resta -
+  b = 6 - 2;
+  printf("Resta: %d\n", b);
+
+  // Multiplicacion *
+  c = a * 2;
+  printf("Multiplicacion: %d\n", c);
+
+  // Division /
+  d = b / 2.5;
+  printf("Division: %.2f\n", d);
+
+  f = 9 % 2;
+  printf("Residuo division: %d\n", f);
+
+  return 0;
+}
+```
+
+![alt text](image-9.png)
+
+---
+
+**Operadores Incremento y Decremento en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Operadores de incremento
+  int a, b, c;
+  a = 0;
+
+  // Pre-incremento
+  ++a; // Primero se incrementa el valor
+  printf("Nuevo valor de a: %d\n", a);
+
+  // Post-incremento
+  // Se usa el valor de la variable y después se incrementa
+  printf("Valor de 'a' sin incrementar (a++): %d\n", a++);
+  printf("Valor de 'a' ya que incrementarse (a): %d\n", a);
+
+  // Ejemplo
+  a = 5;
+  b = 2;
+  c = ++a * b++;
+  printf("Valor a: %d\n", a);
+  printf("Valor b: %d\n", b);
+  printf("Valor c: %d\n", c);
+
+  // Operadores de decremento
+  a = 5;
+  b = 2;
+  c = --a * b--;
+  printf("Valor a: %d\n", a); // No tenia un decremento pendiente
+  printf("Valor b: %d\n", b); // tenia un decremento pendiente
+  printf("Valor c: %d\n", c);
+
+  return 0;
+}
+```
+
+![alt text](image-10.png)
+
+---
+
+**Operadores de Asignación / Compuestos en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Operadores de Asignacion
+  // Operador = para asignar un valor
+  int miNumero = 10;
+  printf("Valor miNumero: %d\n", miNumero);
+  // Modificar el valor de una variable
+  miNumero = 20;
+  printf("Valor miNumero: %d\n", miNumero);
+  // Operador +=
+  miNumero += 5; // miNumero = miNumero + 5;
+  printf("Valor miNumero: %d\n", miNumero);
+  // Operadores -=
+  miNumero -= 3; // miNumero = miNumero - 3;
+  printf("Valor miNumero: %d\n", miNumero);
+  // Operadores *=
+  miNumero *= 2; // miNumero = miNumero * 2;
+  printf("Valor miNumero: %d\n", miNumero);
+  // Operadores /=
+  miNumero /= 7; // miNumero = miNumero / 7;
+  printf("Valor miNumero: %d\n", miNumero);
+  // Operadores %= (modulo o residuo division)
+  miNumero %= 2; // miNumero = miNumero % 2;
+  printf("Valor miNumero: %d\n", miNumero);
+
+  return 0;
+}
+```
+
+![alt text](image-11.png)
+
+---
+
+**Operadores relacionales en C**
+
+| Operadores | Significado       | Ejemplos |
+| ---------- | ----------------- | -------- |
+| ==         | Igual a           | x == y   |
+| !=         | Distinto a        | x != y   |
+| >          | Mayor que         | x > y    |
+| >=         | Mayor o igual que | x >= y   |
+| <          | Menor que         | x < y    |
+| <=         | Menor o igual que | x <= y   |
+
+
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Operadores Relacionales (comparación)
+
+  int a = 5, b = 6;
+  printf("Valor  a: %d\n", a);
+  printf("Valor  b: %d\n", b);
+
+  // Operador igualdad
+  bool c = a == b;
+  printf("a igual que b? %d\n", c);
+  // Operador distinto
+  c = a != b;
+  printf("a distinto que b? %d\n", c);
+  // Operador mayor que
+  c = a > b;
+  printf("a mayor que b? %d\n", c);
+  // Operador mayor que
+  c = a > b;
+  printf("a mayor que b? %d\n", c);
+  // Operador mayor o igual que
+  c = a >= b;
+  printf("a mayor o igual que b? %d\n", c);
+  // Operador menor que
+  c = a < b;
+  printf("a menor que b? %d\n", c);
+  // Operador menor o igual que
+  c = a <= b;
+  printf("a menor o igual que b? %d\n", c);
+
+  return 0;
+}
+```
+
+![alt text](image-12.png)
+
+---
+
+**Operadores Lógicos**
+
+![alt text](ol.png)
+
+**&& and (y):** Regresa verdadero si ambos valores lógicos son verdaderos. Ej, `y && x`
+
+**|| or (O):** Regresa verdadero si cualquiera de los operadores es verdadero. Ej, `x || y`
+
+**! not (NO):** Invierte el resultado lógico `true` -> `false` o `false` -> `true`. Ej, `!x`
+
+![alt text](and_or.jpg)
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Operadores Lógicos
+  bool a = true;  // Verdadero - 1
+  bool b = false; // Falso - 0
+  printf("Valor a: %d\n", a);
+  printf("Valor b: %d\n", b);
+
+  // Operador Lógico && (and - y)
+  // Regresa verdadero si ambos operados son verdaderos
+  bool c = a && b;
+  printf("Resultado operador and: %d\n", c);
+
+  // Operador Lógico || (or - o)
+  // Regresa verdadero si cualquier operador es verdadero
+  c = a || b;
+  printf("Resultado operador or: %d\n", c);
+
+  // Operador Lógico ! (not - NO)
+  // Invierte el resultado lógico
+  c = !a;
+  printf("Resultado operador not: %d\n", c);
+
+  return 0;
+}
+```
+
+![alt text](image-13.png)
+
+---
+
+
+```c
+
+```
+
+**Ejercicio Propuesto: Valor Dentro de Rango**
+
+![alt text](image-14.png)
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ejericio Valor Dentro de Rango
+  // Definimos las variables
+  int minimo = 0, maximo = 5;
+  // Solicitamos un valor entre 0 y 5
+  int datos;
+  printf("Proporciona un dato entre 0 y 5: ");
+  scanf("%d", &datos);
+
+  // Verificamos si estamos dentro de rango
+  bool dentroRango = datos >= minimo && datos <= maximo;
+  printf("Valor dentro de rango?: %d\n", dentroRango);
+
+  return 0;
+}
+```
+
+![alt text](image-15.png)
+
+**Precedencia de Operadores**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+  // Precedencia de Operadores en C
+  // 1. Parentesis y Corchetes
+  // 2. Operadores unarios, como -, ++, --, !
+  // 3. Aritmeticos *, / y %
+  // 4. Aritmeticos + y -
+  // 5. Relacionales <, <=, > y >=
+  // 6. Igualdad/distinto == y !=
+  // 7. Logicos && y ||
+  // 8. Asignacion =, +=, -=, *=, etc.
+
+  // Ejemplo: Se revisa de izquierda a derecha
+  // int a = 12 / (3 + 2) * 3 - 1;
+  int a = 12 / 3 + 2 * 3 - 1;
+  printf("Resultado: %d", a);
+
+  return 0;
+}
+```
+
+![alt text](image-16.png)
+
 ## Decisiones
+
 ## Ciclos
+
 ## Arreglos
+
 ## Matrices
+
 ## Funciones
+
 ## Funciones Incorporadas al lenguaje C
