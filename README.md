@@ -28,7 +28,7 @@
 
 Una función es un bloque de código que nos permite realizar alguna operación.
 
-[!image](./funcion-c.JPG)
+![alt text](funcion-c.JPG)
 
 **Ejemplo:** Mandar a imprimir algo a consola.
 
@@ -452,6 +452,85 @@ int main()
   return 0;
 }
 ```
+
+---
+
+**Constantes en C**
+
+```c
+const <tipo> <nombre> = valor;
+```
+
+Ej: `const int MI_CONSTANTE = 100;`
+
+Una vez definido el valor de una constante ya no podemos modificarlo.
+
+```c
+#include <stdio.h>
+// 2. Otra forma de definir una constante
+#define PI 3.1416
+// Utilizar la constante M_PI pero de la libreria march
+#include <math.h>
+// #include <cmath>
+
+int main()
+{
+  // Manejo de Constantes en C
+  // 1. Definir una constante
+  const int MI_CONSTANTE = 10;
+  // MI_CONSTANTE = 20; // Esto arroja un error no puede modificarlo
+  printf("Valor constante: %d\n", MI_CONSTANTE);
+  // Imprimimos el valor de la constante PI
+  printf("Valor PI = %f\n", PI);
+  // Imprimimos el valor PI de la libreria math
+  printf("Valor PI Math = %f\n", M_PI);
+
+  // Constante segundos por minuto
+  const int SEGUNDOS_POR_MINUTO = 60;
+  printf("Constante SEGUNDOS_POR_MINUTO = %d\n", SEGUNDOS_POR_MINUTO);
+
+  return 0;
+}
+```
+
+![alt text](image-7.png)
+
+---
+
+**Tamaño de Tipos de Datos en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // sizeof
+  // Definición variables
+  int entero;
+  float flotante;
+  double doble;
+  char caracter;
+  char cadena[] = "Hola mundo";
+  bool logico = false;
+
+  // sizeof -> entero positivo (unsigned) long (lu) -> %lu
+  // int -> signed (valores positivos y negativos)
+  // Imprimir el tamanio en bytes de cada tipo de dato
+  printf("int tamanio bytes: %lu\n", sizeof(entero));
+  printf("float tamanio bytes: %lu\n", sizeof(flotante));
+  printf("double tamanio bytes: %lu\n", sizeof(doble));
+  printf("char tamanio bytes: %lu\n", sizeof(caracter));
+  printf("char[] tamanio bytes: %lu\n", sizeof(cadena));
+  printf("bool tamanio bytes: %lu\n", sizeof(logico));
+
+  return 0;
+}
+```
+
+![alt text](image-8.png)
+
+---
 
 ## Operadores 
 ## Decisiones
