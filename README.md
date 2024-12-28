@@ -1,12 +1,13 @@
 # Universidad C - Aprender El Lenguaje C desde cero
 
 [!lenguaje-c](./lenguaje-c.png)
-# Tabla de Contenido
+
+## Tabla de Contenido
+
 - [Universidad C - Aprender El Lenguaje C desde cero](#universidad-c---aprender-el-lenguaje-c-desde-cero)
-- [Tabla de Contenido](#tabla-de-contenido)
+  - [Tabla de Contenido](#tabla-de-contenido)
   - [Introducción al lenguaje C](#introducción-al-lenguaje-c)
   - [Variables](#variables)
-  - [Tipos de datos](#tipos-de-datos)
   - [Operadores](#operadores)
   - [Decisiones](#decisiones)
   - [Ciclos](#ciclos)
@@ -22,7 +23,6 @@
 - Es un Lenguaje Compilado
 - Es multiplataforma
 - Muchos lenguajes más modernos `extienden` del lenguaje C (C++, Java, C#, JavaScript)
-  
 
 **¿Qué es una función?**
 
@@ -178,7 +178,243 @@ int main() {
 }
 ```
 
-## Tipos de datos 
+---
+
+**Imprimir varias variables**
+
+```c
+# include <stdio.h>
+
+int main() {
+
+  // 1. Declarar varias variables
+  int miNumero2 = 20, miNumero3 = 30;
+  // 2. Imprimir el valor de las variables
+  printf("Mi numero dos es: %d, \nmi numero tres es: %d", miNumero2, miNumero3);
+
+  return 0;
+}
+```
+
+---
+
+**Reglas de Nombres de Variables en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Reglas de Nombres de Variables en C
+  // 1. Sensible a mayúsculas y minúsculas
+  // 2. No podemos usar palabras reservadas (keyword)
+  // 3. Cómo buena práctica, usar notación altas-bajas (camello)
+  // 4. Debe iniciar con letras o guión bajo (_)
+  // 5. No debe iniciar con números ni caracteres especiales (¡$%&)
+  // 6. Despues del primer caracter, podemos usar guión bajo, letra o números
+  // 7. Los nombres no puede contener espacios en blanco
+  // 8. Se recomienda usar nombres descriptivos, no una sola letra.
+
+  int miVariable = 10;
+  // printf("%d", miVariable);// Arroja error ( C es sensible a mayúsculas y minúsculas)
+
+  // int for = 20; // Arroja error (No podemos usar palabras reservadas)
+
+  int miVariable = 30; // Aunque es válido, no es buena práctica.
+
+  // Notación altas-bajas (camello)
+
+  int miVariableEntera = 40;
+
+  // Uso de guión bajo al inicio
+  int _miVariable = 50;
+  int mi_variable = 60;
+
+  // Utilizar números pero después del primer caracter
+  // int 1Mivariable = 70; // Arroja error (No debe iniciar con números)
+  int miVariable1 = 80;
+
+  // Nombres descriptivos
+  int sm = 60;
+  int segundosPorMinuto = 60;
+
+  return 0;
+}
+```
+
+---
+
+**Ejemplo de Tipos de Datos en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+/**
+ * Tipos de datos básicos en C
+ */
+
+int main()
+{
+  // Tipo entero (formato %d, %i)
+  int entero = 10;
+  printf("Tipo entero: %i", entero);
+
+  // Tipo flotante (formato %f)
+  float flotante = 3800.5;
+  printf("\nTipo flotante: %1.2f", flotante);
+
+  // Tipo doble (formato %lf ->  long float)
+  double doble = 20.5;
+  printf("\nTipo doble: %.2lf", doble);
+
+  // Tipo caracter (formato %c)
+  char caracter = 'A';
+  printf("\nTipo caracter: %c", caracter);
+  printf("\nValor decimal caracter: %d", caracter);
+  char caracterDecimal = 65;
+  printf("\nTipo caracter decimal: %c", caracterDecimal);
+
+  // Tipo bool (valores: true = 1 o false = 0)
+  bool logico = true;
+  printf("\nTipo logico: %d", logico);
+
+  // Un arreglo es un conjunto de datos
+  // se encuentran ubicados de formas consecutiva en la memoria.
+
+  // Tipo cadena (formato %s -> string)
+  char cadena[] = "Hola";
+  printf("\nTipo Cadena: %s", cadena);
+
+  // Tipo cadena (otra sintaxis)
+  char cadena2[10] = "Saludos";
+  // char cadena2[5] = "Saludos"; // Arroja error (longitud máximo de caracter era 6)
+  printf("\nTipo Cadena2: %s", cadena2);
+
+  return 0;
+}
+```
+
+---
+
+**Dirección de Memoria de una Variable**
+
+![alt text](image-1.png)
+
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+/*
+Dirección de Memoria en C (apuntadores)
+*/
+
+int main()
+{
+  // Declarar una variable
+  int miNumero = 10;
+  printf("Imprimir el valor de variable: %d", miNumero);
+  // Imprimimos la dirección de memoria
+  printf("\nImprimir la dirección memoria: %p", &miNumero);
+
+  return 0;
+}
+```
+
+![alt text](image-2.png)
+
+---
+
+**Introducir datos por la consola**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Ejemplo para solicitar información al usuario
+  int miNumero;
+  printf("Proporciona una numero: ");
+  // leemos información del usuario
+  scanf("%d", &miNumero);
+
+  // Imprimimos el valor proporcionado
+  printf("\nEl numero proporcionado es: %d", miNumero);
+  return 0;
+}
+```
+
+![alt text](image-3.png)
+
+---
+
+**Introducir Cadenas por Consola**
+
+
+```c
+// stdio => std - io
+// std = standard,
+// io -input/output (entrada/salida)
+#include <stdio.h>
+
+int main()
+{
+  // Ejemplo para solicitar información al usuario
+  int tamanioCadena = 10;
+  char nombre[tamanioCadena];
+  printf("Proporciona un nombre: ");
+  // leemos información del usuario
+  scanf("%[^'\n']s", nombre);
+
+  // Imprimimos el valor proporcionado
+  printf("\nEl nombre proporcionado es: %s", nombre);
+  return 0;
+}
+```
+
+![alt text](image-4.png)
+
+---
+
+**Introducir Cadenas por Consola - Parte 2**
+
+```c
+// stdio => std - io
+// std = standard,
+// io -input/output (entrada/salida)
+#include <stdio.h>
+
+int main()
+{
+  // Ejemplo para solicitar información al usuario
+  int tamanioCadena = 10;
+  char nombre[tamanioCadena];
+  printf("Proporciona un nombre: ");
+  // leemos información del usuario
+  // scanf("%[^'\n']s", nombre);
+  // fgets(nombre, tamanioCadena, stdin); // standard input
+  gets(nombre);
+
+  // Imprimimos el valor proporcionado
+  printf("\nEl nombre proporcionado es: %s", nombre);
+  return 0;
+}
+```
+
+![alt text](image-4.png)
+
+---
+
+**Ejercicio Propuesto: Datos de un Empleado**
+
+![alt text](image-5.png)
+![alt text](image-6.png)
+
+```c
+
+```
+
 ## Operadores 
 ## Decisiones
 ## Ciclos
