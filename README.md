@@ -1,6 +1,6 @@
 # Universidad C - Aprender El Lenguaje C desde cero
 
-[!lenguaje-c](./lenguaje-c.png)
+![alt text](lenguaje-c.png)
 
 ## Tabla de Contenido
 
@@ -9,7 +9,7 @@
   - [Introducción al lenguaje C](#introducción-al-lenguaje-c)
   - [Variables](#variables)
   - [Operadores](#operadores)
-  - [Decisiones](#decisiones)
+  - [Sentencias de Decisiones](#sentencias-de-decisiones)
   - [Ciclos](#ciclos)
   - [Arreglos](#arreglos)
   - [Matrices](#matrices)
@@ -837,7 +837,283 @@ int main() {
 
 ![alt text](image-16.png)
 
-## Decisiones
+---
+
+## Sentencias de Decisiones
+
+![alt text](Diagrama-de-flujo-de-la-sentencia-iterativa-while.png)
+
+```c
+if (condicion_boleana) {
+  // instrucciones
+}
+```
+
+---
+
+**Ejemplo Sentencia IF en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Sentencia IF
+  // Verificamos si el numero proporcionado es positivo
+  printf("Proporciona un numero: ");
+  int miNumero;
+  scanf("%d", &miNumero);
+
+  // Verificamos si el numero es positivo
+  if (miNumero > 0)
+  {
+    printf("Valor positivo: %d\n", miNumero);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-17.png)
+
+---
+
+**Sentencia IF ELSE en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Sentencia IF
+  // Verificamos si el numero proporcionado es positivo
+  printf("Proporciona un numero: ");
+  int miNumero;
+  scanf("%d", &miNumero);
+
+  // Verificamos si el numero es positivo
+  if (miNumero > 0)
+  {
+    printf("Valor positivo: %d\n", miNumero);
+  }
+  else
+  {
+    printf("Valor Cero o Negativo: %d\n", miNumero);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-18.png)
+
+---
+
+**Sentencia IF - ELSE IF - ELSE en C**
+
+![alt text](image-19.png)
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Sentencia IF
+  // Verificamos si el numero proporcionado es positivo
+  printf("Proporciona un numero: ");
+  int miNumero;
+  scanf("%d", &miNumero);
+
+  // Verificamos si el numero es positivo
+  if (miNumero > 0)
+  {
+    printf("Valor positivo: %d\n", miNumero);
+  }
+  else if (miNumero < 0)
+  {
+    printf("Valor Negativo: %d\n", miNumero);
+  }
+  else
+  {
+    printf("Valor Cero: %d\n", miNumero);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-20.png)
+
+---
+
+**Operador Ternario**
+
+Es una simplificación de la sentencia if/else
+
+![alt text](image-21.png)
+
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Sentencia IF
+  // Verificamos si el numero proporcionado es positivo
+  printf("Proporciona un numero: ");
+  int miNumero;
+  scanf("%d", &miNumero);
+
+  // Verificamos si el numero es positivo, cero o negativo
+  // Operador Ternario
+  (miNumero > 0) ? printf("Positivo") : printf("Cero o Negativo");
+
+  return 0;
+}
+```
+
+![alt text](image-22.png)
+
+---
+
+**Ejercicio Propuesto: Mayor de Edad**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Algoritmo Mayor Edad
+  printf("Proporciona tu edad: ");
+  int edad;
+  scanf("%d", &edad);
+
+  // Revisamos si la edad es mayor de edad
+  if (edad >= 18)
+  {
+    printf("La persona con edad %d es un mayor de edad\n");
+  }
+  else if (edad > 0 && edad < 18)
+  {
+    printf("La persona con edad %d es un menor");
+  }
+  else
+  {
+    printf("Proporcionado es inválido");
+  }
+
+  return 0;
+}
+```
+
+**Ejemplo Día de la Semana - Sentencia if else**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Dia de la semana (if-else)
+  int diaSemana;
+  printf("Proporciona el dia de la semana");
+  scanf("%d", &diaSemana);
+
+  // Revisamos que dia de la semana es
+  if (diaSemana == 1)
+  {
+    printf("Lunes\n");
+  }
+  else if (diaSemana == 2)
+  {
+    printf("Martes\n");
+  }
+  else if (diaSemana == 3)
+  {
+    printf("Miércoles\n");
+  }
+  else if (diaSemana == 4)
+  {
+    printf("Jueves\n");
+  }
+  else if (diaSemana == 5)
+  {
+    printf("Viernes\n");
+  }
+  else if (diaSemana == 6)
+  {
+    printf("Sábado\n");
+  }
+  else if (diaSemana == 7)
+  {
+    printf("Domingo\n");
+  }
+  else
+  {
+    printf("Valor dia errores: %d\n", diaSemana);
+  }
+
+  return 0;
+}
+```
+
+---
+
+**Sentencia switch**
+
+![alt text](image-23.png)
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Dia de la semana (if-else)
+  int diaSemana;
+  printf("Proporciona el dia de la semana");
+  scanf("%d", &diaSemana);
+
+  // Revision dia de la semana - switch
+  switch (diaSemana)
+  {
+  case 1:
+    printf("Lunes\n");
+    break;
+  case 2:
+    printf("Martes\n");
+    break;
+  case 3:
+    printf("Miércoles\n");
+    break;
+  case 4:
+    printf("Jueves\n");
+    break;
+  case 5:
+    printf("Viernes\n");
+    break;
+  case 6:
+    printf("Sábado\n");
+    break;
+  case 7:
+    printf("Domingo\n");
+    break;
+
+  default:
+    printf("Valor dia errores: %d\n", diaSemana);
+    break;
+  }
+
+  return 0;
+}
+```
+
+---
+
 
 ## Ciclos
 

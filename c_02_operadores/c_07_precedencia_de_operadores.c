@@ -15,7 +15,7 @@ int main() {
 	// Ejemplo: Se revisa de izquierda a derecha
 	// int a = 12 / (3 + 2) * 3 - 1;
 	int a = 12 / 3 + 2 * 3 - 1;
-	printf("Resultado: %d", a);
+	printf("Resultado: %d\n", a);
 	
 	return 0;
 }
