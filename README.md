@@ -128,7 +128,7 @@ miVariable = 10; // int -> 4 bytes
 
 ---
 
-**Sintaxis Variables en C**
+**Sintáxis Variables en C**
 
 `[calificado] <tipo> <nombre> = <valor>;`
 
@@ -285,7 +285,7 @@ int main()
   char cadena[] = "Hola";
   printf("\nTipo Cadena: %s", cadena);
 
-  // Tipo cadena (otra sintaxis)
+  // Tipo cadena (otra sintáxis)
   char cadena2[10] = "Saludos";
   // char cadena2[5] = "Saludos"; // Arroja error (longitud máximo de caracter era 6)
   printf("\nTipo Cadena2: %s", cadena2);
@@ -1126,7 +1126,7 @@ Un ciclo nos permite repetir un bloque de código mientra la condición sea verd
 
 **Ciclo `while`**
 
-Sintaxis:
+Sintáxis:
 
 ```c
 white(condicion) {
@@ -1197,7 +1197,7 @@ int main()
 
 **Ciclo `do while` en C**
 
-Sintaxis:
+Sintáxis:
 
 ```c
 do {
@@ -1242,7 +1242,7 @@ int main()
 
 - Con ciclo `for` especificamos cuantas veces queremos repetir su bloque de código.
 
-sintaxis:
+sintáxis:
 
 ```c
 for (declaracion variables; condicion a evaluar; incremento contadores) {
@@ -1350,7 +1350,7 @@ int main()
 
 **Ejercicio propuesto: Suma Acumulativa con `while` y `do-while`**
 
-**Sintaxis de `while`:**
+**Sintáxis de `while`:**
 
 ```c
 #include <stdio.h>
@@ -1380,7 +1380,7 @@ int main()
 }
 ```
 
-**Sintaxis de `do while`:**
+**Sintáxis de `do while`:**
 
 ```c
 #include <stdio.h>
@@ -1411,6 +1411,209 @@ int main()
 ![alt text](image-31.png)
 
 ## Arreglos
+
+Un arreglo nos permite almacenar múltiples valores en una sola variable, en lugar de definir varias variables.
+
+**Sintáxis:**
+
+`<tipo_dato> <nombre_arreglo>[tamañoArreglo];`
+
+**Ejemplo:** `int numerosArreglo[5];`
+
+En memoria se crea un arreglo:
+
+![alt text](image-32.png)
+
+---
+
+**Modificar y Leer de los Valores de un Arreglo en C**
+
+**Modificar de los Valores de un Arreglo**
+
+![alt text](image-33.png)
+
+> [!NOTE]
+> No es necesario modificar todos los valores del arreglo
+
+**Leer de los Valores de un Arreglo**
+
+```c
+int numerosArreglos[5];
+// Modificamos algunos valores
+numerosArreglos[0] = 10;
+numerosArreglos[4] = 50;
+// Leemos los valores de arreglo // Imprime
+printf("%d", numerosArreglo[0]); // -> 10
+printf("%d", numerosArreglo[0]); // -> ? -> valor basura
+printf("%d", numerosArreglo[4]); // -> 50
+```
+
+![alt text](image-34.png)
+
+---
+
+**Ejemplo de Arreglo en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Definir un arreglo
+  int numerosArreglo[5];
+
+  // Modificar los valores de un arreglo
+  numerosArreglo[0] = 13;
+  numerosArreglo[1] = 21;
+  numerosArreglo[4] = 62;
+
+  // Leer los valores del arreglo
+  printf("Elemento 1 - Arreglo[0] = %d\n", numerosArreglo[0]);
+  printf("Elemento 2 - Arreglo[1] = %d\n", numerosArreglo[1]);
+  printf("Elemento 3 - Arreglo[2] = %d\n", numerosArreglo[2]);
+  printf("Elemento 4 - Arreglo[3] = %d\n", numerosArreglo[3]);
+  printf("Elemento 5 - Arreglo[4] = %d\n", numerosArreglo[4]);
+
+  return 0;
+}
+```
+
+![alt text](image-35.png)
+
+---
+
+**Sintáxis Simplificado de Arreglos:**
+
+```c
+// Tamaño de arreglo =   0   1   2   3   5
+int numerosArreglo[] = {100,200,300,400,500};
+// [] -> no se especifica la cantidad de elementos
+```
+
+![alt text](image-36.png)
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Definir un arreglo
+  int numerosArreglo[] = {100, 200, 300, 400, 500};
+
+  // Modificar los valores de un arreglo
+  // numerosArreglo[0] = 120;
+
+  // Leer los valores del arreglo
+  printf("Elemento 1 - Arreglo[0] = %d\n", numerosArreglo[0]);
+  printf("Elemento 2 - Arreglo[1] = %d\n", numerosArreglo[1]);
+  printf("Elemento 3 - Arreglo[2] = %d\n", numerosArreglo[2]);
+  printf("Elemento 4 - Arreglo[3] = %d\n", numerosArreglo[3]);
+  printf("Elemento 5 - Arreglo[4] = %d\n", numerosArreglo[4]);
+
+  return 0;
+}
+```
+
+![alt text](image-37.png)
+
+---
+
+**Iteración de un Arreglo en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Definir un arreglo
+  int numerosArreglo[] = {100, 200, 300, 400, 500};
+
+  // Iterar un arreglo
+  printf("Iteramos los valores del arreglo:\n");
+  for (int i = 0; i < 5; i++)
+  {
+    printf("Arreglo[%d] = %d\n", i, numerosArreglo[i]);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-38.png)
+
+---
+
+**Obtener el largo de un arreglo en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Definir un arreglo
+  int numerosArreglo[] = {100, 200, 300, 400, 500};
+
+  int largoArreglo;
+  // Obtener el largo del arreglo dinamicamente
+  // Memoria ocupada por todo el arreglo
+  int tamanioArreglo = sizeof(numerosArreglo); // 5 x 4 = 20
+  printf("Tamanio arreglo: %d\n", tamanioArreglo);
+
+  // Memoria ocupada por un solo elemento
+  int tamanioUnElemento = sizeof(numerosArreglo[0]);
+  printf("Tamanio de un elemento del arreglo: %d\n", tamanioUnElemento);
+
+  largoArreglo = tamanioArreglo / tamanioUnElemento;
+  printf("Largo arreglo: %d\n", largoArreglo);
+
+  // Iterar un arreglo
+  printf("Iteramos los valores del arreglo:\n");
+  for (int i = 0; i < largoArreglo; i++)
+  {
+    printf("Arreglo[%d] = %d\n", i, numerosArreglo[i]);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-39.png)
+
+---
+
+**Introducir Datos a un Arreglo en C**
+
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Introducir valores de manera dinamica al arreglo
+  int numeroElementos;
+  printf("Proporciona el tamanio del arreglo: ");
+  scanf("%d", &numeroElementos);
+
+  // Crear el arreglo
+  int numeros[numeroElementos];
+  // Solicitamos al usuario los valores
+  for (int i = 0; i < numeroElementos; i++)
+  {
+    printf("Arreglo[%d] = ", i);
+    scanf("%d", &numeros[i]);
+  }
+
+  // Mandamos a imprimir
+  for (int i = 0; i < numeroElementos; i++)
+  {
+    printf("\nArreglo[%d] = %d", i, numeros[i]);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-40.png)
 
 ## Matrices
 
