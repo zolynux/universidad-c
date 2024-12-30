@@ -685,8 +685,6 @@ int main()
 | <          | Menor que         | x < y    |
 | <=         | Menor o igual que | x <= y   |
 
-
-
 ```c
 #include <stdio.h>
 #include <stdbool.h>
@@ -775,7 +773,6 @@ int main()
 ![alt text](image-13.png)
 
 ---
-
 
 ```c
 
@@ -954,7 +951,6 @@ int main()
 Es una simplificación de la sentencia if/else
 
 ![alt text](image-21.png)
-
 
 ```c
 #include <stdio.h>
@@ -1583,7 +1579,6 @@ int main()
 
 **Introducir Datos a un Arreglo en C**
 
-
 ```c
 #include <stdio.h>
 
@@ -1616,6 +1611,200 @@ int main()
 ![alt text](image-40.png)
 
 ## Matrices
+
+Una matriz es una arreglo de 2 dimensiones.
+
+**Sintáxis:**
+
+`<tipo_datos> <nombre_matriz>[renglones][columnas];`
+
+**Ejemplo:**
+
+```c
+// 2 -> renglones
+// 3 -> columnas
+int matriz[2][3];
+```
+
+![alt text](image-41.png)
+
+---
+
+**Modificar y Leer de los valores de una Matriz**
+
+**Modificar los valores de una matriz**
+
+![alt text](image-42.png)
+
+> [!NOTE]
+> No es necesario modificar todos los valores de la matriz
+
+**Leer los valores de una matriz**
+
+![alt text](image-43.png)
+
+---
+
+**Ejercicio Matrices**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Definir una matriz
+  const int RENGLONES = 2;
+  const int COLUMNAS = 3;
+  int matriz[RENGLONES][COLUMNAS];
+
+  // Modificar los valores de la matriz
+  matriz[0][0] = 100;
+  matriz[0][1] = 200;
+  matriz[0][2] = 300;
+  matriz[1][0] = 400;
+  matriz[1][1] = 500;
+  matriz[1][2] = 600;
+
+  // Leer los valores de la matriz
+  // int valor1 = matriz[0][0]
+  printf("%d\n", matriz[0][0]); // -> 100
+  printf("%d\n", matriz[1][2]); // -> 600
+
+  return 0;
+}
+```
+
+![alt text](image-44.png)
+
+---
+
+**Sintáxis Simplificado de Matrices**
+
+```c
+int matriz[2][3] = {
+  {100,200,300}, // -> Primer renglón
+  {400,500,600}, // -> Segundo renglón
+}
+```
+
+![alt text](image-45.png)
+
+---
+
+**Ejemplo Sintáxis Simplificado Para Declarar Matrices**
+
+```c
+#include <stdio.h>
+#define RENGLONES 2
+#define COLUMNAS 3
+
+int main()
+{
+  // Definir una matriz
+  // const int RENGLONES = 2;
+  // const int COLUMNAS = 3;
+  int matriz[RENGLONES][COLUMNAS] = {
+      {100, 200, 300},
+      {400, 500, 600}};
+
+  // Leer los valores de la matriz
+  // int valor1 = matriz[0][0]
+  printf("%d\n", matriz[0][0]); // -> 100
+  printf("%d\n", matriz[1][2]); // -> 600
+
+  return 0;
+}
+```
+
+![alt text](image-46.png)
+
+![alt text](image-45.png)
+
+---
+
+**Iterar una Matriz en C**
+
+![alt text](image-47.png)
+
+---
+
+**Ejemplo Iterar una Matriz en C**
+
+```c
+#include <stdio.h>
+#define RENGLONES 2
+#define COLUMNAS 3
+
+int main()
+{
+  // Definir una matriz
+  // const int RENGLONES = 2;
+  // const int COLUMNAS = 3;
+  int matriz[RENGLONES][COLUMNAS] = {
+      {100, 200, 300},
+      {400, 500, 600}};
+
+  // Iteramos la matriz
+  printf("------Iteramos la matriz------");
+  for (int ren = 0; ren < RENGLONES; ren++)
+  {
+    printf("\nRenglon (pivote): %d", ren);
+    for (int col = 0; col < COLUMNAS; col++)
+    {
+      printf("\nMatriz[%d][%d] = %d", ren, col, matriz[ren][col]);
+    } // Fin for columnas
+    printf("\n");
+  } // Fin for renglones
+
+  return 0;
+}
+```
+
+![alt text](image-48.png)
+
+---
+
+**Introducir Datos a una Matriz en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Introducir datos en una matriz
+  int renglones, columnas;
+  printf("Proporciona el numero de renglones: ");
+  scanf("%d", &renglones);
+  printf("Proporciona el numero de columnas: ");
+  scanf("%d", &columnas);
+
+  // Creamos la matriz
+  int matriz[renglones][columnas];
+
+  // Introducir los valores
+  for (int ren = 0; ren < renglones; ren++)
+  {
+    for (int col = 0; col < columnas; col++)
+    {
+      printf("Matriz[%d][%d] = ", ren, col);
+      scanf("%d", &matriz[ren][col]);
+    }
+  }
+
+  // Imprimir los valores
+  printf("-----Impresion de la Matriz-----\n");
+  for (int ren = 0; ren < renglones; ren++)
+  {
+    for (int col = 0; col < columnas; col++)
+    {
+      printf("%d ", matriz[ren][col]);
+    }
+    printf("\n");
+  }
+}
+```
+
+![alt text](image-49.png)
 
 ## Funciones
 
