@@ -1114,8 +1114,301 @@ int main()
 
 ---
 
-
 ## Ciclos
+
+Un ciclo nos permite repetir un bloque de código mientra la condición sea verdadera.
+
+**Tipos de Ciclos**
+
+- ciclo `while`
+- ciclo `do while`
+- ciclo `for`
+
+**Ciclo `while`**
+
+Sintaxis:
+
+```c
+white(condicion) {
+  // instrucciones
+}
+```
+
+- La condición es un valor lógico (`true, false`)
+- El ciclo while repite la ejecución del bloque de código mientras la condición sea verdadera (`true`)
+
+---
+
+**Ejemplo Ciclo `while` en C**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  // Ciclo while
+  // Imprimir los numeros del 1 al 5
+  int contador = 1, repeticiones = 5;
+
+  // while
+  while (contador <= repeticiones)
+  {
+    printf("%d\n", contador);
+    contador++; // Incrementa el valor en 1
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-25.png)
+
+---
+
+**Detalle Ciclo `while` en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ciclo while
+  // Imprimir los numeros del 1 al 5
+  int contador = 1, repeticiones = 5;
+
+  // while
+  while (contador <= repeticiones)
+  {
+    printf("Numero: %d\n", contador);
+    contador++; // Incrementa el valor en 1
+    // Condicion a evaluar
+    bool condicion = contador <= repeticiones;
+    printf("%d <= %d -> %d", contador, repeticiones, condicion);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-24.png)
+
+---
+
+**Ciclo `do while` en C**
+
+Sintaxis:
+
+```c
+do {
+  //instrucciones
+} while(condicion);
+```
+
+- El ciclo `do while` ejecuta al menos una vez su bloque de código debido a que la condición a revisar se encuentra al final del bloque
+
+**Ejemplo Ciclo `do while` en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ciclo do while
+  // Repetir hasta que sea un valor positivo
+  int numero;
+  bool condicion;
+
+  do
+  {
+    printf("Proporcione un numero positivo: ");
+    scanf("%d", &numero);
+    condicion = numero > 0;
+  } while (!condicion);
+
+  // Termina el ciclo
+  printf("\nValor positivo: %d", numero);
+
+  return 0;
+}
+```
+
+![alt text](image-26.png)
+
+---
+
+**Ciclo `for` en C**
+
+- Con ciclo `for` especificamos cuantas veces queremos repetir su bloque de código.
+
+sintaxis:
+
+```c
+for (declaracion variables; condicion a evaluar; incremento contadores) {
+  // Instrucciones -> Se ejecuta el bloque de código.
+}
+```
+
+1. Se ejecuta solo una vez al inicio de la ejecución del ciclo `for`
+2. Se repite el ciclo mientras la condición sea verdadera.
+3. Se ejecuta el bloque de código
+4. Se incrementan los contadores
+
+> [!NOTE]
+> Se repiten los pasos 2, 3 y 4 mientras la condición sea verdadera.
+
+---
+
+**Ejemplo Ciclo `for` en C**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ciclo for
+  // Imprimir 1...5
+  const int REPETICIONES = 5;
+  for (int contador = 1; contador <= REPETICIONES; contador++)
+  {
+    printf("%d\n", contador);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-27.png)
+
+---
+
+**Ejericio Propuesto: Impresión de 3 en 3 en C**
+
+```c
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  const int REPETICIONES = 10;
+  // Incremento
+  printf("Incrementos de 3 en 3 (Tope 10):\n");
+  for (int i = 1; i <= 10; i += 3)
+  {
+    printf("%d ", i);
+  }
+  printf("\nDecrementos de 3 en 3 (Tope -10):\n");
+
+  for (int j = 1; j >= -10; j -= 3)
+  {
+    printf("%d ", j);
+  }
+
+  return 0;
+}
+```
+
+![alt text](image-28.png)
+
+---
+
+**Ejercicio propuesto: Suma Acumulativa en C**
+
+Realizar la suma de los primeros 5 números utilizando un ciclo `for`
+
+![alt text](image-29.png)
+
+```c
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ejercicio Propuesto: Suma Acumulativa
+  int suma = 0, numero = 1;
+
+  // ciclo For
+  for (numero; numero <= 5; numero++)
+  {
+    printf("acumulador + numero: %d + %d\n", suma, numero);
+    suma += numero;
+    (numero < 5) ? printf("Suma parcial acumulada: %d\n", suma) : printf("Finaliza la suma acumulad: %d\n", suma);
+  }
+  printf("Fin de bloque de ciclo\n");
+
+  return 0;
+}
+```
+
+![alt text](image-30.png)
+
+---
+
+**Ejercicio propuesto: Suma Acumulativa con `while` y `do-while`**
+
+**Sintaxis de `while`:**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ejercicio Propuesto: Suma Acumulativa
+  int sumaAcumulada = 0, numero = 1;
+
+  // While
+  while (numero <= 5)
+  {
+    // Imprimimos lo que va a sumar (no altera el resultado de la suma)
+    printf("acumulador + numero: %d + %d\n", sumaAcumulada, numero);
+    // sumaAcumulada = sumaAcumulada + numero;
+    sumaAcumulada += numero;
+    // Imprimimos el resultado parcial y final de suma con condición
+    (numero < 5) ? printf("Suma parcial acumulada: %d\n", sumaAcumulada) : printf("Finaliza la suma acumulativa total es: %d\n", sumaAcumulada);
+    // Incrementamos la variable de numero
+    numero++;
+  }
+
+  printf("Fin de bloque de ciclo\n");
+
+  return 0;
+}
+```
+
+**Sintaxis de `do while`:**
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+  // Ejercicio Propuesto: Suma Acumulativa
+  int sumaAcumulada = 0, numero = 1;
+  do
+  {
+    // Imprimimos lo que va a sumar (no altera el resultado de la suma)
+    printf("acumulador + numero: %d + %d\n", sumaAcumulada, numero);
+    // sumaAcumulada = sumaAcumulada + numero;
+    sumaAcumulada += numero;
+    // Imprimimos el resultado parcial y final de suma con condición
+    (numero < 5) ? printf("Suma parcial acumulada: %d\n", sumaAcumulada) : printf("Finaliza la suma acumulativa total es: %d\n", sumaAcumulada);
+    // Incrementamos la variable de numero
+    numero++;
+  } while (numero <= 5);
+
+  printf("Fin de bloque de ciclo\n");
+
+  return 0;
+}
+```
+
+![alt text](image-31.png)
 
 ## Arreglos
 
