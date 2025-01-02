@@ -2645,3 +2645,13 @@ Valor 8.50 truncado = 8
 ---
 
 ## Conclusión
+
+- Es uno de los lenguajes de programación más usados después de Java.
+- Es una de las fuentes iniciales de programación y es muy reconocido.
+- Se adapta bien al hardware, lo que facilita el desarrollo y la respuesta de los dispositivos.
+- Es un lenguaje eficiente, por lo que se utiliza para diseñar software de sistemas.
+- Se utilizó para crear el sistema operativo Unix.
+- Programar en C proporciona una base sólida que facilita el aprendizaje de otros lenguajes.
+- Es ideal para el desarrollo de sottware para dispositivos embebidos, como microcontroladores y sistemas integrados.
+
+**C** es un lenguaje de programación procedimental imperativo que permite programación estructurada, alcance de variables léxicas y recursión.
