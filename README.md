@@ -90,6 +90,13 @@
     - [Funciones Recursivas en C](#funciones-recursivas-en-c)
     - [Ejemplo de Funciones Recursivas en C](#ejemplo-de-funciones-recursivas-en-c)
   - [Funciones Incorporadas al lenguaje C](#funciones-incorporadas-al-lenguaje-c)
+    - [Función para Obtener el Largo de una Cadena](#función-para-obtener-el-largo-de-una-cadena)
+    - [SubCadenas en C](#subcadenas-en-c)
+    - [Ejercicio Propuesto: SubCadenas en C](#ejercicio-propuesto-subcadenas-en-c)
+    - [Convertir de Texto a Número en C](#convertir-de-texto-a-número-en-c)
+    - [Convertir de Número a Texto en C](#convertir-de-número-a-texto-en-c)
+    - [Valor Absoluto de un Número en C](#valor-absoluto-de-un-número-en-c)
+    - [Redondeo y Truncado en C](#redondeo-y-truncado-en-c)
   - [Conclusión](#conclusión)
 
 ---
@@ -2404,7 +2411,7 @@ int main()
 }
 ```
 
-**Ejecutar:**
+**🟢 Ejecutar:**
 
 ```plaintext
 1
@@ -2417,5 +2424,224 @@ int main()
 ---
 
 ## Funciones Incorporadas al lenguaje C
+
+### Función para Obtener el Largo de una Cadena
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  // Definir cadena
+  char cadena[] = "Hola";
+  // Obtenemos el largo de una cadena
+  int largo = strlen(cadena);
+
+  printf("Cadena orignal: %s\n", cadena);
+  printf("Largo cadena: %d\n", largo);
+  largo = sizeof(cadena);
+  printf("Largo cadena (sizeof): %d\n", largo);
+
+  // Recorrer la cadena
+  char c;
+  for (int i = 0; i < strlen(cadena); i++)
+  {
+    c = cadena[i];
+    printf("\n%c", c);
+  }
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Cadena orignal: Hola
+Largo cadena: 4
+Largo cadena (sizeof): 5
+
+H
+o
+l
+a
+```
+
+### SubCadenas en C
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  // Subcadenas en C
+  char cadena[] = "Hola Mundo";
+  char subcadena[10];
+
+  // strncpy - string copy
+  // char* strncpy(destino, cadenaOriginal, numeroCaracteres);
+  int inicio = 0, nCaracteres = 4;
+  strncpy(subcadena, &cadena[inicio], nCaracteres);
+  subcadena[nCaracteres] = '\0';
+  printf("Cadena Original: %s", cadena);
+  printf("\nSubCadena: %s", subcadena);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Cadena Original: Hola Mundo
+SubCadena: Hola
+```
+
+### Ejercicio Propuesto: SubCadenas en C
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  // Subcadenas en C
+  char cadena[] = "Hola Mundo";
+  char subcadena[10];
+
+  // strncpy - string copy
+  // char* strncpy(destino, cadenaOriginal, numeroCaracteres);
+  int inicio = 5, nCaracteres = 5;
+  strncpy(subcadena, &cadena[inicio], nCaracteres);
+  subcadena[nCaracteres] = '\0';
+  printf("Cadena Original: %s", cadena);
+  printf("\nSubCadena: %s", subcadena);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Cadena Original: Hola Mundo
+SubCadena: Mundo
+```
+
+### Convertir de Texto a Número en C
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  // Convertir de texto a numero
+  char cadena1[] = "10";
+  char cadena2[] = "20";
+  // atoi -> Ascci to int
+  // atof -> Ascci to float
+  // Si no es numero -> 0
+  int resultado = atoi(cadena1) + atoi(cadena2);
+  printf("Resultado suma: %d", resultado);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Resultado suma: 30
+```
+
+### Convertir de Número a Texto en C
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  // Convertir de numero a texto
+  int edad = 28;
+  char edadTexto[5]; // Suficientes caracteres
+  // itoa -> int to Ascii (int to strintg)
+  // ftoa -> float to Ascii (float to strintg)
+  // Se necesita proporcionar la base numero
+  // 10 -> base numerica decimal
+  itoa(edad, edadTexto, 10);
+  printf("Convirtiendo a texto: %s", edadTexto);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Convirtiendo a texto: 28
+```
+
+### Valor Absoluto de un Número en C
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int numero, numeroAbs;
+  printf("Proporciona un valor numerico: ");
+  scanf("%d", &numero);
+  numeroAbs = abs(numero);
+  printf("Valor absoluto de %d es: %d", numero, numeroAbs);
+
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Proporciona un valor numerico: 3
+Valor absoluto de 3 es: 3
+```
+
+### Redondeo y Truncado en C
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+  // Redondeo y truncado
+  float numero;
+  int redondeo, truncado;
+
+  // Redondeo
+  numero = 8.5;
+  // round -> .5 redondea al entero mayor mas cercano
+  redondeo = round(numero);
+  printf("\nValor %.2f redondeado = %d", numero, redondeo);
+
+  // truncado
+  truncado = trunc(numero);
+  printf("\nValor %.2f truncado = %d", numero, truncado);
+  return 0;
+}
+```
+
+**🟢 Ejecutar:**
+
+```plaintext
+Valor 8.50 redondeado = 9
+Valor 8.50 truncado = 8
+```
+
+---
 
 ## Conclusión
