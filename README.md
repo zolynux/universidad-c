@@ -1,6 +1,6 @@
 # Universidad C - Aprender El Lenguaje C desde cero
 
-![alt text](lenguaje-c.png)
+![alt text](./screenshot/lenguaje-c.png)
 
 ---
 
@@ -113,7 +113,7 @@
 
 Una función es un bloque de código que nos permite realizar alguna operación.
 
-![alt text](funcion-c.JPG)
+![alt text](./screenshot/funcion-c.JPG)
 
 **Ejemplo:** Mandar a imprimir algo a consola.
 
@@ -191,7 +191,7 @@ c = 20
 miVariable = 10; // int -> 4 bytes
 ```
 
-![alt text](image.png)
+![alt text](./screenshot/image.png)
 
 ### Tipos de datos en C
 
@@ -363,7 +363,7 @@ int main()
 
 ### Dirección de Memoria de una Variable
 
-![alt text](image-1.png)
+![alt text](./screenshot/image-1.png)
 
 ```c
 #include <stdio.h>
@@ -385,7 +385,7 @@ int main()
 }
 ```
 
-![alt text](image-2.png)
+![alt text](./screenshot/image-2.png)
 
 ### Introducir datos por la consola
 
@@ -406,7 +406,7 @@ int main()
 }
 ```
 
-![alt text](image-3.png)
+![alt text](./screenshot/image-3.png)
 
 ### Introducir Cadenas por Consola
 
@@ -431,7 +431,7 @@ int main()
 }
 ```
 
-![alt text](image-4.png)
+![alt text](./screenshot/image-4.png)
 
 ### Introducir Cadenas por Consola - Parte 2
 
@@ -458,12 +458,12 @@ int main()
 }
 ```
 
-![alt text](image-4.png)
+![alt text](./screenshot/image-4.png)
 
 ### Ejercicio Propuesto: Datos de un Empleado
 
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](./screenshot/image-5.png)
+![alt text](./screenshot/image-6.png)
 
 ```c
 #include <stdio.h>
@@ -545,7 +545,7 @@ int main()
 }
 ```
 
-![alt text](image-7.png)
+![alt text](./screenshot/image-7.png)
 
 ### Tamaño de Tipos de Datos en C
 
@@ -578,7 +578,7 @@ int main()
 }
 ```
 
-![alt text](image-8.png)
+![alt text](./screenshot/image-8.png)
 
 ---
 
@@ -639,7 +639,7 @@ int main()
 }
 ```
 
-![alt text](image-9.png)
+![alt text](./screenshot/image-9.png)
 
 ### Operadores Incremento y Decremento en C
 
@@ -681,7 +681,7 @@ int main()
 }
 ```
 
-![alt text](image-10.png)
+![alt text](./screenshot/image-10.png)
 
 ### Operadores de Asignación / Compuestos en C
 
@@ -717,7 +717,7 @@ int main()
 }
 ```
 
-![alt text](image-11.png)
+![alt text](./screenshot/image-11.png)
 
 ### Operadores relacionales en C
 
@@ -768,11 +768,11 @@ int main()
 }
 ```
 
-![alt text](image-12.png)
+![alt text](./screenshot/image-12.png)
 
 ### Operadores Lógicos
 
-![alt text](ol.png)
+![alt text](./screenshot/ol.png)
 
 **&& and (y):** Regresa verdadero si ambos valores lógicos son verdaderos. Ej, `y && x`
 
@@ -780,7 +780,7 @@ int main()
 
 **! not (NO):** Invierte el resultado lógico `true` -> `false` o `false` -> `true`. Ej, `!x`
 
-![alt text](and_or.jpg)
+![alt text](./screenshot/and_or.jpg)
 
 ```c
 #include <stdio.h>
@@ -813,11 +813,11 @@ int main()
 }
 ```
 
-![alt text](image-13.png)
+![alt text](./screenshot/image-13.png)
 
 ### Ejercicio Propuesto: Valor Dentro de Rango
 
-![alt text](image-14.png)
+![alt text](./screenshot/image-14.png)
 
 ```c
 #include <stdio.h>
@@ -841,7 +841,7 @@ int main()
 }
 ```
 
-![alt text](image-15.png)
+![alt text](./screenshot/image-15.png)
 
 **Precedencia de Operadores:**
 
@@ -869,13 +869,13 @@ int main() {
 }
 ```
 
-![alt text](image-16.png)
+![alt text](./screenshot/image-16.png)
 
 ---
 
 ## Sentencias de Decisiones
 
-![alt text](Diagrama-de-flujo-de-la-sentencia-iterativa-while.png)
+![alt text](./screenshot/Diagrama-de-flujo-de-la-sentencia-iterativa-while.png)
 
 ```c
 if (condicion_boleana) {
@@ -907,7 +907,7 @@ int main()
 }
 ```
 
-![alt text](image-17.png)
+![alt text](./screenshot/image-17.png)
 
 ### Sentencia IF ELSE en C
 
@@ -937,11 +937,11 @@ int main()
 }
 ```
 
-![alt text](image-18.png)
+![alt text](./screenshot/image-18.png)
 
 ### Sentencia IF - ELSE IF - ELSE en C
 
-![alt text](image-19.png)
+![alt text](./screenshot/image-19.png)
 
 ```c
 #include <stdio.h>
@@ -973,13 +973,13 @@ int main()
 }
 ```
 
-![alt text](image-20.png)
+![alt text](./screenshot/image-20.png)
 
 ### Operador Ternario
 
 Es una simplificación de la sentencia if/else
 
-![alt text](image-21.png)
+![alt text](./screenshot/image-21.png)
 
 ```c
 #include <stdio.h>
@@ -1001,7 +1001,7 @@ int main()
 }
 ```
 
-![alt text](image-22.png)
+![alt text](./screenshot/image-22.png)
 
 ### Ejercicio Propuesto: Mayor de Edad
 
@@ -1087,7 +1087,7 @@ int main()
 
 ### Sentencia switch
 
-![alt text](image-23.png)
+![alt text](./screenshot/image-23.png)
 
 ```c
 #include <stdio.h>
@@ -1180,7 +1180,7 @@ int main()
 }
 ```
 
-![alt text](image-25.png)
+![alt text](./screenshot/image-25.png)
 
 ### Detalle Ciclo `while` en C
 
@@ -1208,7 +1208,7 @@ int main()
 }
 ```
 
-![alt text](image-24.png)
+![alt text](./screenshot/image-24.png)
 
 ### Ciclo `do while` en C
 
@@ -1249,7 +1249,7 @@ int main()
 }
 ```
 
-![alt text](image-26.png)
+![alt text](./screenshot/image-26.png)
 
 ### Ciclo `for` en C
 
@@ -1291,7 +1291,7 @@ int main()
 }
 ```
 
-![alt text](image-27.png)
+![alt text](./screenshot/image-27.png)
 
 ### Ejericio Propuesto: Impresión de 3 en 3 en C
 
@@ -1320,13 +1320,13 @@ int main()
 }
 ```
 
-![alt text](image-28.png)
+![alt text](./screenshot/image-28.png)
 
 ### Ejercicio propuesto: Suma Acumulativa en C
 
 Realizar la suma de los primeros 5 números utilizando un ciclo `for`
 
-![alt text](image-29.png)
+![alt text](./screenshot/image-29.png)
 
 ```c
 
@@ -1351,7 +1351,7 @@ int main()
 }
 ```
 
-![alt text](image-30.png)
+![alt text](./screenshot/image-30.png)
 
 ### Ejercicio propuesto: Suma Acumulativa con `while` y `do-while`
 
@@ -1413,7 +1413,7 @@ int main()
 }
 ```
 
-![alt text](image-31.png)
+![alt text](./screenshot/image-31.png)
 
 ## Arreglos
 
@@ -1427,13 +1427,13 @@ Un arreglo nos permite almacenar múltiples valores en una sola variable, en lug
 
 En memoria se crea un arreglo:
 
-![alt text](image-32.png)
+![alt text](./screenshot/image-32.png)
 
 ### Modificar y Leer de los Valores de un Arreglo en C
 
 **Modificar de los Valores de un Arreglo:**
 
-![alt text](image-33.png)
+![alt text](./screenshot/image-33.png)
 
 > [!NOTE]
 > No es necesario modificar todos los valores del arreglo
@@ -1451,7 +1451,7 @@ printf("%d", numerosArreglo[0]); // -> ? -> valor basura
 printf("%d", numerosArreglo[4]); // -> 50
 ```
 
-![alt text](image-34.png)
+![alt text](./screenshot/image-34.png)
 
 ### Ejemplo de Arreglo en C
 
@@ -1479,7 +1479,7 @@ int main()
 }
 ```
 
-![alt text](image-35.png)
+![alt text](./screenshot/image-35.png)
 
 ### Sintáxis Simplificado de Arreglos
 
@@ -1489,7 +1489,7 @@ int numerosArreglo[] = {100,200,300,400,500};
 // [] -> no se especifica la cantidad de elementos
 ```
 
-![alt text](image-36.png)
+![alt text](./screenshot/image-36.png)
 
 ```c
 #include <stdio.h>
@@ -1513,7 +1513,7 @@ int main()
 }
 ```
 
-![alt text](image-37.png)
+![alt text](./screenshot/image-37.png)
 
 ### Iteración de un Arreglo en C
 
@@ -1536,7 +1536,7 @@ int main()
 }
 ```
 
-![alt text](image-38.png)
+![alt text](./screenshot/image-38.png)
 
 ### Obtener el largo de un arreglo en C
 
@@ -1572,7 +1572,7 @@ int main()
 }
 ```
 
-![alt text](image-39.png)
+![alt text](./screenshot/image-39.png)
 
 ### Introducir Datos a un Arreglo en C
 
@@ -1605,7 +1605,7 @@ int main()
 }
 ```
 
-![alt text](image-40.png)
+![alt text](./screenshot/image-40.png)
 
 ## Matrices
 
@@ -1623,20 +1623,20 @@ Una matriz es una arreglo de 2 dimensiones.
 int matriz[2][3];
 ```
 
-![alt text](image-41.png)
+![alt text](./screenshot/image-41.png)
 
 ### Modificar y Leer de los valores de una Matriz
 
 **Modificar los valores de una matriz:**
 
-![alt text](image-42.png)
+![alt text](./screenshot/image-42.png)
 
 > [!NOTE]
 > No es necesario modificar todos los valores de la matriz
 
 **Leer los valores de una matriz:**
 
-![alt text](image-43.png)
+![alt text](./screenshot/image-43.png)
 
 ### Ejercicio Matrices
 
@@ -1667,7 +1667,7 @@ int main()
 }
 ```
 
-![alt text](image-44.png)
+![alt text](./screenshot/image-44.png)
 
 ### Sintáxis Simplificado de Matrices
 
@@ -1678,7 +1678,7 @@ int matriz[2][3] = {
 }
 ```
 
-![alt text](image-45.png)
+![alt text](./screenshot/image-45.png)
 
 ### Ejemplo Sintáxis Simplificado Para Declarar Matrices
 
@@ -1705,13 +1705,13 @@ int main()
 }
 ```
 
-![alt text](image-46.png)
+![alt text](./screenshot/image-46.png)
 
-![alt text](image-45.png)
+![alt text](./screenshot/image-45.png)
 
 ### Iterar una Matriz en C
 
-![alt text](image-47.png)
+![alt text](./screenshot/image-47.png)
 
 ### Ejemplo Iterar una Matriz en C
 
@@ -1745,7 +1745,7 @@ int main()
 }
 ```
 
-![alt text](image-48.png)
+![alt text](./screenshot/image-48.png)
 
 ### Introducir Datos a una Matriz en C
 
@@ -1787,7 +1787,7 @@ int main()
 }
 ```
 
-![alt text](image-49.png)
+![alt text](./screenshot/image-49.png)
 
 ---
 
@@ -1805,31 +1805,31 @@ Tanto los valores de entrada, como los valores de salida de una función son opc
 
 **Ejemplo:** Función para sumar dos valores
 
-![alt text](image-50.png)
+![alt text](./screenshot/image-50.png)
 
 **Necesidad de los Funciones:**
 
 Un programa de muchas líneas de código buscaremos dividirlo en funciones más pequeñas, con objetivos muy claros.
 
-![alt text](image-51.png)
+![alt text](./screenshot/image-51.png)
 
 ### Sintáxis de una Función
 
-![alt text](image-52.png)
+![alt text](./screenshot/image-52.png)
 
-![alt text](image-53.png)
+![alt text](./screenshot/image-53.png)
 
 ### Argumentos y Parámetros en una Función
 
 **Diferencia entre Parámetros y Argumentos:**
 
-![alt text](image-54.png)
+![alt text](./screenshot/image-54.png)
 
 **Diferencia entre Procedimiento y Función:**
 
 **Procedimiento:** No regresa ningún valor.
 
-![alt text](image-55.png)
+![alt text](./screenshot/image-55.png)
 
 **Función:** Regresa un valor al terminar de ejecutarse
 
@@ -1854,7 +1854,7 @@ int sumar(int a, int b) {
 
 ### Tipos de Funciones en C
 
-![alt text](image-56.png)
+![alt text](./screenshot/image-56.png)
 
 ### Ejemplo de creación de un Procedimiento en C
 
@@ -1883,7 +1883,7 @@ int main()
 }
 ```
 
-![alt text](image-57.png)
+![alt text](./screenshot/image-57.png)
 
 ### Ejemplo de una Función en C
 
@@ -1913,7 +1913,7 @@ int main()
 }
 ```
 
-![alt text](image-58.png)
+![alt text](./screenshot/image-58.png)
 
 ### Copia de Valores
 
@@ -1929,7 +1929,7 @@ b = 20;
 
 **En memoria:**
 
-![alt text](image-59.png)
+![alt text](./screenshot/image-59.png)
 
 ### Ejemplo de Copia de valores
 
@@ -1949,7 +1949,7 @@ int main()
 }
 ```
 
-![alt text](image-60.png)
+![alt text](./screenshot/image-60.png)
 
 ### Apuntadores (Copia de la Referencia de Memoria)
 
@@ -1970,7 +1970,7 @@ printf("%d", a); // imprime 20
 printf("%d", *b); // imprime 20
 ```
 
-![alt text](image-61.png)
+![alt text](./screenshot/image-61.png)
 
 - `int a = 10;`: Declara una variable entera `a` con valor `10`.
 - `int *b = &a;`: Declara un apuntador `b` que almacena la dirección de la variable `a`.
@@ -2010,7 +2010,7 @@ int main()
 }
 ```
 
-![alt text](image-62.png)
+![alt text](./screenshot/image-62.png)
 
 Este código demuestra cómo trabajar con variables, apuntadores y direcciones de memoria en C. Aquí está un resumen de lo que hace cada parte:
 
@@ -2061,7 +2061,7 @@ int main() {
 }
 ```
 
-![alt text](image-63.png)
+![alt text](./screenshot/image-63.png)
 
 > [!NOTE]
 > **Conclusión:** Los cambios hechos en la función No afecta a la variable externa, solo se recibió una copia, son variables distintas.
@@ -2088,7 +2088,7 @@ int main()
 }
 ```
 
-![alt text](image-64.png)
+![alt text](./screenshot/image-64.png)
 
 ### Paso por Referencia
 
@@ -2108,7 +2108,7 @@ int main() {
 }
 ```
 
-![alt text](image-65.png)
+![alt text](./screenshot/image-65.png)
 
 > [!NOTE]
 > **Conclusión:** Los cambios hechos en la función Si afectan a la variable externa, ya que se recibió la referencia o dirección de memoria de la variable externa.
@@ -2173,7 +2173,7 @@ int main()
 }
 ```
 
-![alt text](image-66.png)
+![alt text](./screenshot/image-66.png)
 
 ### Arreglos y Apuntadores en C
 
@@ -2242,7 +2242,7 @@ int main() {
 }
 ```
 
-![alt text](image-67.png)
+![alt text](./screenshot/image-67.png)
 
 > [!NOTE]
 > **Conclusión:** Los arreglos se pasan por referencia por default. No se requiere pasar con `&`
@@ -2272,7 +2272,7 @@ int main()
 }
 ```
 
-![alt text](image-68.png)
+![alt text](./screenshot/image-68.png)
 
 ### Ejemplo de Cadena y Funciones en C
 
@@ -2298,7 +2298,7 @@ int main()
 }
 ```
 
-![alt text](image-69.png)
+![alt text](./screenshot/image-69.png)
 
 ### Más de Cadenas y Apuntadores en C
 
@@ -2326,7 +2326,7 @@ int main()
 }
 ```
 
-![alt text](image-70.png)
+![alt text](./screenshot/image-70.png)
 
 ### Alcance de Variables en C
 
@@ -2335,7 +2335,7 @@ Es la región del programa donde se define, declara y utiliza una variable.
 - **Alcance Global:** Alcanza a todo el programa, pero es el menos utilizado.
 - **Alcance Local:** Se puede determinar dónde empieza y acaba el alcance de las variables locales basándose en el nivel más alto y en cada bloque de definición de una clase o módulo.
 
-![alt text](image-71.png)
+![alt text](./screenshot/image-71.png)
 
 ### Ejemplo de Alcance de Variables en C
 
@@ -2367,7 +2367,7 @@ int main()
 }
 ```
 
-![alt text](image-72.png)
+![alt text](./screenshot/image-72.png)
 
 ### Funciones Recursivas en C
 
@@ -2376,9 +2376,9 @@ Es una función que se llama a si misma. La recursión es un proceso en el que e
 **Reglas Funciones Recursivas:**
 
 1. Una función que se llama a si misma.
-![alt text](image-73.png)
+![alt text](./screenshot/image-73.png)
 2. Debe avanzar hacia un caso base, de lo contrario caemos en ciclos infinitos.
-![alt text](image-74.png)
+![alt text](./screenshot/image-74.png)
 
 ### Ejemplo de Funciones Recursivas en C
 
